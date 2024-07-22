@@ -65,7 +65,7 @@ const ProductsForm = ({  products, productDetails, setProductDetails, selectedPr
     if (selectedProduct !== null) {
       if(productDetails !== products.filter(product => product._id === selectedProduct)[0]){
        try {
-          await updateProduct(`http://localhost:8080/api/v1/products/${selectedProduct}`, data, accesstoken);
+          await updateProduct(`https://ecommerce-kahpeh.vercel.app/api/v1/products/${selectedProduct}`, data, accesstoken);
           setSuccessMessage("Updated successfully.");
           handleTimeout("success");
         } catch (err) {
@@ -76,7 +76,7 @@ const ProductsForm = ({  products, productDetails, setProductDetails, selectedPr
     // Add new Product
     } else {
       try {
-        await addProduct("http://localhost:8080/api/v1/products", data, accesstoken);
+        await addProduct("https://ecommerce-kahpeh.vercel.app/api/v1/products", data, accesstoken);
         setSuccessMessage("New product has been added.");
         handleTimeout("success");
       } catch (err) {

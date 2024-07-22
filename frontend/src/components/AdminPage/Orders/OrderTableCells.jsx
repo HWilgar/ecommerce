@@ -12,10 +12,10 @@ const OrderTableCells = ({ order, handleEdit, handleDelete }) => {
   const [formattedOrder, setFormattedOrder] = useState("");
   const [products, setProducts] = useState([]);
   const { data: userList, error: userError, refetch: userRefetch } = useFetchData(
-    "https://kahpehbini-api.vercel.app/api/v1/users"
+    "https://ecommerce-kahpeh.vercel.app/api/v1/users"
   );
   const { data: productList, error: productError, refetch: productRefetch } = useFetchData(
-    "https://kahpehbini-api.vercel.app/api/v1/products"
+    "https://ecommerce-kahpeh.vercel.app/api/v1/products"
   );
 
   useEffect(()=> {

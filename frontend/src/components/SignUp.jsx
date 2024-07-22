@@ -54,7 +54,7 @@ const SignUp = () => {
         }
 
         try {
-            await addData("https://kahpehbini-api.vercel.app/api/v1/users/register", data);
+            await addData("https://ecommerce-kahpeh.vercel.app/api/v1/users/register", data);
             setSuccessMessage("Registered Successfully.");
             reset();
             setUserDetails({});

@@ -10,7 +10,7 @@ import MyContext from "../../authContext";
 
 function Orders() {
   const { data, error, refetch } = useFetchData(
-    "https://kahpehbini-api.vercel.app/api/v1/orders"
+    "https://ecommerce-kahpeh.vercel.app/api/v1/orders"
   );
   const { user } = useContext(MyContext);
   const [showModal, setShowModal] = useState(false);
@@ -52,7 +52,7 @@ function Orders() {
       };
 
       await updateData(
-        `https://kahpehbini-api.vercel.app/api/v1/orders/${orderId}`, data,
+        `https://ecommerce-kahpeh.vercel.app/api/v1/orders/${orderId}`, data,
         user.accessToken
       );
       setWarningMessage("Order has been deleted.");

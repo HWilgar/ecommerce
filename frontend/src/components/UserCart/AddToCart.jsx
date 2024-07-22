@@ -7,7 +7,7 @@ import MyContext from "../../authContext";
 const AddToCart = () => {
   const { setCartOrder, setCartOrderCount, cartOrderCount } = useContext(MyContext);
   const { data, error, refetch } = useFetchData(
-    "https://kahpehbini-api.vercel.app/api/v1/products"
+    "https://ecommerce-kahpeh.vercel.app/api/v1/products"
   );
   const [cartItems, setCartItems] = useState([]);
   const [deliveryFee, setDeliveryFee] = useState(50); // Placeholder for delivery fee

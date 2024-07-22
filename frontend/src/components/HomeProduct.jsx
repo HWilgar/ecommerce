@@ -12,7 +12,7 @@ import MyContext from "../authContext";
 const HomeProduct = () => {
   const { cartOrderCount, setCartOrderCount } = useContext(MyContext);
   const { data, error, refetch } = useFetchData(
-    "https://kahpehbini-api.vercel.app/api/v1/products"
+    "https://ecommerce-kahpeh.vercel.app/api/v1/products"
   );
   const [products, setProducts] = useState([]);
   // const [cartCount, setCartCount] = useState(0);

@@ -12,8 +12,8 @@ const UserProfileForm = ({ user }) => {
   const [profile, setProfile]=useState({});
   const [formEditable, setFormEditable] = useState(false);
   const { register, handleSubmit, formState: { errors, isDirty }, reset, trigger } = useForm({ defaultValues: profile });
-  const { data: regionList } = useFetchData("https://kahpehbini-api.vercel.app/api/v1/regions");
-  const { data: fetchedProfile, refetch: refetchedProfile } = useFetchData(`https://kahpehbini-api.vercel.app/api/v1/users/${user._id}`);
+  const { data: regionList } = useFetchData("https://ecommerce-kahpeh.vercel.app/api/v1/regions");
+  const { data: fetchedProfile, refetch: refetchedProfile } = useFetchData(`https://ecommerce-kahpeh.vercel.app/api/v1/users/${user._id}`);
   const createdAt = new Date(profile.createdAt);
   const formattedDate = `${createdAt.toLocaleString('en-US', { month: 'short' })} ${createdAt.getDate()}, ${createdAt.getFullYear()}`;
 
@@ -189,7 +189,7 @@ const UserProfileForm = ({ user }) => {
       }
 
       // Update the database
-      await axios.patch(`https://kahpehbini-api.vercel.app/api/v1/users/${user._id}`, updatedProfile);
+      await axios.patch(`https://ecommerce-kahpeh.vercel.app/api/v1/users/${user._id}`, updatedProfile);
       setSuccessMessage("Updated successfully.");
       handleTimeout("success");
       

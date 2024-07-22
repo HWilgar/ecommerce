@@ -10,7 +10,7 @@ const Products = () => {
   const accesstoken =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjgyNGJiM2E4MDY1NGJiNzk5ZTQ4NDAiLCJpYXQiOjE3MTk4MTUxMDV9.HySIpv9xCD_BMY0KTuUTl3DX33-xMo40R7cFSMLBYGE";
   const { data, error, refetch } = useFetchData(
-    "http://localhost:8080/api/v1/products"
+    "https://ecommerce-kahpeh.vercel.app/api/v1/products"
   );
   const [deleteData] = useDeleteData();
   const [productDetails, setProductDetails] = useState({});
@@ -41,7 +41,7 @@ const Products = () => {
     const product = products.filter((product) => product._id === productId);
     try {
       await deleteData(
-        `http://localhost:8080/api/v1/products/${productId}/${
+        `https://ecommerce-kahpeh.vercel.app/api/v1/products/${productId}/${
           product[0].image.filename.split("/")[1]
         }`,
         accesstoken
